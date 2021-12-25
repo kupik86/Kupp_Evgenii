@@ -17,9 +17,10 @@
  r- разряд ( сколько нолей дабавляем )
 """
 
+
 def update(list_data, number, r):
     pos = list_data.index(number)  # определяем индекс найденного элемента
-    quotation_marks = (f'"{number.zfill(r)}"')  # формируем строку из элемента вложенного в двойные кавычки и
+    quotation_marks = f'"{number.zfill(r)}"'  # формируем строку из элемента вложенного в двойные кавычки и
     # обновленного в соответствии с разрядом
     list_data.remove(number)  # удаляем исходный элемент из редактируемого списка
     list_data.insert(pos, quotation_marks)  # заменяем удаленный элемент на обновленный
