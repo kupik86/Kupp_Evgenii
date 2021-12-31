@@ -9,3 +9,8 @@
 # например: «01.jpg», «02.jpg». Если будут проблемы с pillow - можно поработать с другим пакетом: например, requests.
 
 # Решение
+# python -m venv test_pj
+# test_pj\Scripts\activate
+# pip install pillow==8.3.2
+# deactivate
+# pip freeze > requirements.txt
