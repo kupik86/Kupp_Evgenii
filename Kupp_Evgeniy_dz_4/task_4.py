@@ -6,3 +6,7 @@
 # лишнего не происходит.
 
 # Решение
+import task_3
+
+money = input('Введите валюту: ')
+print(task_3.currency_rates(money))
