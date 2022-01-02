@@ -19,7 +19,6 @@ def currency_rates(item):
     respone = requests.get(url)
     # определяем кодировку страницы и декодируем ее, приводя содержимое к строковому типу
     content = respone.content.decode(encoding=respone.encoding)
-    print(content)
     rezult = None
     if item not in content:
         return rezult
@@ -32,6 +31,5 @@ def currency_rates(item):
 
 
 if __name__ == '__main__':
-    money = input('Введите валюту: ')
+    money = input('Введите валюту: ').upper()
     print(currency_rates(money))
-
