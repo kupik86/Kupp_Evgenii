@@ -12,3 +12,15 @@
 # использовать словарь в этом случае?
 
 # Решение
+def thesaurus(*args):
+    slovar = {}
+    for name in args:
+        fst_letter = name[0]
+        if slovar.get(fst_letter):
+            slovar[fst_letter].append(name)
+        else:
+            slovar.setdefault(fst_letter, [name])
+    print(slovar)
+
+
+thesaurus('Маша', 'Петя', 'Вася', 'Коля', 'Митя', 'Витя', 'Костя')
