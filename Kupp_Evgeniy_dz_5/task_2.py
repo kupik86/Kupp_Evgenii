@@ -15,3 +15,8 @@
 # * (вместо 1) Решить задачу генерации нечётных чисел от 1 до n (включительно), не используя ключевое слово yield.
 
 # Решение
+odd_nums = 15
+odd_to_15 = (i for i in range(1, odd_nums + 1) if i % 2 != 0)
+print(next(odd_to_15))
+print(next(odd_to_15))
+print(next(odd_to_15))
