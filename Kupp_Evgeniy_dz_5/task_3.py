@@ -21,3 +21,25 @@
 # генератор даст эффект.
 
 # Решение
+from itertools import zip_longest
+
+
+tutors = [
+    'Иван', 'Анастасия', 'Петр', 'Сергей',
+    'Дмитрий', 'Борис', 'Елена', 'Степан', 'Михаил'
+]
+klasses = [
+    '9А', '7В', '9Б', '9В', '8Б', '10А', '10Б', '9А'
+]
+gen = (el for el in zip_longest(tutors, klasses[:len(tutors)]))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+
