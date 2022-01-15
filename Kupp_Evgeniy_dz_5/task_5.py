@@ -10,6 +10,15 @@
 
 # Решение
 src = [2, 2, 2, 7, 23, 1, 44, 44, 3, 2, 10, 7, 4, 11]
-gen = (i for i in src if src.count(i) < 2)  # оптимизировал по памяти
-h = list(gen)
-print(h)
+# gen = (i for i in src if src.count(i) < 2)  # оптимизировал по памяти но медленная скорость
+# h = list(gen)
+# print(h)
+
+set_src = set(src)  # скорость выше
+src_copy = src.copy()
+for k in set_src:
+    if k in src_copy:
+        src_copy.remove(k)
+gen_2 = (i for i in src if i not in src_copy)  # оптимизация памяти
+result = list(gen_2)
+print(result)
