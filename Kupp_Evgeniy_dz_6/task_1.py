@@ -18,6 +18,4 @@ with open('nginx_logs.txt', 'r', encoding='UTF-8') as f:
     for lines in f:
         el = lines.split()
         result.append((el[0], el[5].strip('"'), el[6]))
-print(result)
-for i in result:
-    print(i, end='\n')
+print(*result, sep='\n')
