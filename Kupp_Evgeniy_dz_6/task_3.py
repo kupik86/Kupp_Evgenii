@@ -15,3 +15,13 @@
 # горные лыжи
 
 # Решение
+d = {}
+with open('users.csv', 'r', encoding='utf-8') as f1:
+    with open('hobby.csv', 'r', encoding='utf-8') as f2:
+        users = f1.read()
+        hobby = f2.read()
+
+        print(users)
+        print(hobby)
+
+
