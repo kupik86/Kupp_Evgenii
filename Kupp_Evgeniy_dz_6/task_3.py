@@ -15,13 +15,24 @@
 # горные лыжи
 
 # Решение
-d = {}
+from itertools import zip_longest
+import json
+import sys
+
+
 with open('users.csv', 'r', encoding='utf-8') as f1:
     with open('hobby.csv', 'r', encoding='utf-8') as f2:
-        users = f1.read()
-        hobby = f2.read()
-
-        print(users)
-        print(hobby)
-
-
+        with open('logs_f1_f2.json', 'w', encoding='utf-8') as f3:
+            users = (f1.read()).split()
+            hobby = (f2.read()).split()
+            gen = (el for el in zip_longest(users, hobby))
+            d = {}
+            if len(users) >= len(hobby):
+                for key, value in gen:
+                    d[key] = value
+                json.dump(d, f3, ensure_ascii=False, indent=4)
+            else:
+                sys.exit(1)
+with open('logs_f1_f2.json', 'r', encoding='utf-8') as r:
+    result = json.load(r)
+print(result)
