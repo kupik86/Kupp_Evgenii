@@ -17,7 +17,6 @@ with open('nginx_logs.txt', 'r', encoding='UTF-8') as f:
             d[el[0]] += 1
         else:
             d[el[0]] = 1
-print(d)
 for key, value in d.items():
     if value > value_max:
         value_max = value
