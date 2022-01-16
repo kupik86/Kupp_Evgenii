@@ -28,3 +28,24 @@
 # 7879,1
 
 # Решение
+# sales.py
+# import sys
+#
+#
+# sales = sys.argv[1]
+# with open('bakery.csv', 'a', encoding='utf-8') as f1:
+#     print(sales, file=f1)
+
+from sys import argv
+
+
+with open('bakery.csv', 'r', encoding='utf-8') as f2:
+    conditions = len(argv)
+    if conditions == 1:
+        print(f2.read())
+    elif conditions == 2:
+        for el in f2.readlines()[int(argv[1]) - 1:]:
+            print(el, end='')
+    elif conditions == 3:
+        for el in f2.readlines()[int(argv[1]) - 1:int(argv[2])]:
+            print(el, end='')
