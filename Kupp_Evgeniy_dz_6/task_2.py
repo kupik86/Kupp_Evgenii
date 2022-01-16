@@ -7,3 +7,19 @@
 
 
 # Решение
+d = {}
+value_max = 0
+key_result = None
+with open('nginx_logs.txt', 'r', encoding='UTF-8') as f:
+    for lines in f:
+        el = lines.split()
+        if el[0] in d:
+            d[el[0]] += 1
+        else:
+            d[el[0]] = 1
+print(d)
+for key, value in d.items():
+    if value > value_max:
+        value_max = value
+        key_result = key
+print(f'Спамер найден \nIP: {key_result} \nчисло запросов: {value_max}')
