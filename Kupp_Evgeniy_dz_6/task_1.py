@@ -13,3 +13,13 @@
 # ]
 
 # Решение
+# import pathlib
+#
+# p = pathlib.Path('nginx_logs.txt')
+# print(p)
+with open('nginx_logs.txt', 'r', encoding='UTF-8') as f:
+    txt = f.read()
+    # for el in f:
+    #     slova = el.split()
+
+    print(txt)
