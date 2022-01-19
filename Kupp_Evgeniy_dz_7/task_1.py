@@ -5,7 +5,7 @@
 # Написать скрипт, создающий стартер (заготовку) для проекта со следующей структурой папок:
 # |--my_project
 #    |--settings
-#    |--mainapp
+#    |--authapp
 #    |--adminapp
 #    |--authapp
 #
@@ -21,7 +21,7 @@ import os
 root = os.getcwd()
 folder = 'my_project'
 if not os.path.exists(folder):
-    list_folders = ['settings', 'mainapp', 'adminapp', 'authapp']
+    list_folders = ['settings', 'authapp', 'adminapp', 'authapp']
     gen = (os.path.join(folder, x) for x in list_folders)
     for i in gen:
         os.makedirs(os.path.join(root, i), exist_ok=True)
