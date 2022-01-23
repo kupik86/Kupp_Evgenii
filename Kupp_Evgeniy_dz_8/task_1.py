@@ -19,3 +19,15 @@
 # смысл в данном случае использовать функцию re.compile()?
 
 # Решение
+import re
+
+
+def email_parse(e_mail):
+    assert pattern.match(e_mail), f'ValueError: wrong email:{e_mail}'
+    rez = pattern.finditer(e_mail)
+    for group in rez:
+        print(group.groupdict())
+
+
+pattern = re.compile(r'(?P<username>.+)[@](?P<domain>[a-z]+\.[a-z]+)')
+email_parse('Kupp56@gmail.com')
