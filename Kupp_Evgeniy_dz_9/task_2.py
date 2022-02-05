@@ -13,3 +13,17 @@
 # Например: 20 м*5000 м*25 кг*5 см = 12500 т.
 
 # Решение
+class Road:
+    def __init__(self, _length, _width):
+        self._length = _length
+        self._width = _width
+
+    def mass_of_asphalt(self):
+        mass_of_asphalt = 20 * int(self._length) * int(self._width) * 5
+        return mass_of_asphalt
+
+
+rd_1 = Road(100, 5)
+print(rd_1.mass_of_asphalt())
+rd_2 = Road(5000, 25)
+print(rd_2.mass_of_asphalt())
