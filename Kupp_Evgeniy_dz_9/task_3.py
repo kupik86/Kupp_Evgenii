@@ -13,3 +13,26 @@
 # атрибутов, вызвать методы экземпляров.
 
 # Решение
+class Worker:
+    def __init__(self, name, surname, position, wage, bonus):
+        self.name = name
+        self.surname = surname
+        self.position = position
+        self.wage = wage
+        self.bonus = bonus
+        self._income = {'wage': self.wage, 'bonus': self.bonus}
+
+class Position(Worker):
+    def get_full_name(self):
+        return f'{self.surname} {self.name}'
+
+    def get_total_income(self):
+        return self.wage + self.bonus
+
+
+employee_1 = Position('Евгений', 'Купп', 'начальник отдела', 96600, 48000)
+employee_2 = Position('Даниил', 'Качан', 'менеджер', 92400, 35000)
+print(vars(employee_1))
+print(vars(employee_2))
+print(employee_1.get_full_name())
+print(employee_2.get_total_income())
