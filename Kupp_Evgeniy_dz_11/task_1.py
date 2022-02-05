@@ -8,3 +8,11 @@
 # месяца и года (например, месяц — от 1 до 12). Проверить работу полученной структуры на реальных данных.
 
 # Решение
+class Data:
+    def __init__(self, param_1):
+        self.param_1 = param_1
+
+    @classmethod
+    def number(cls, ):
+
+
