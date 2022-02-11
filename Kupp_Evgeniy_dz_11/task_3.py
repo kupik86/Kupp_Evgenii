@@ -14,3 +14,21 @@
 # сообщение. При этом работа скрипта не должна завершаться.
 #
 # Решение
+class MyErr(Exception):
+    pass
+
+
+lis_num_user = []
+while True:
+    number_user = input('Введи число или "stop": ')
+    if number_user != 'stop':
+        try:
+            if not number_user.isdigit():
+                raise MyErr(f'Вы ввели не число')
+        except MyErr as err:
+            print(err)
+        else:
+            lis_num_user.append(number_user)
+    else:
+        break
+print(lis_num_user)
