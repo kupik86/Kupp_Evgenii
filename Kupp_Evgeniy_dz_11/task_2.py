@@ -21,7 +21,7 @@ def calculation():
         print(err)
     else:
         res = number_1 / number_2
-        print(res)
+        print(round(res, 2))
 
 
 calculation()
